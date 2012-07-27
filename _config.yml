@@ -2,10 +2,10 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://lukasz-kaniowski.github.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://lukaszkaniowski.pl/
+title: Lukasz Kaniowski
+subtitle: Development that matters
+author: Łukasz Kaniowski
 simple_search: http://google.com/search
 description:
 
