@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://lukasz-kaniowski.github.com/atom.xml" rel="self"/>
-  <link href="http://lukasz-kaniowski.github.com/"/>
-  <updated>2012-07-27T13:20:03+02:00</updated>
-  <id>http://lukasz-kaniowski.github.com/</id>
+  <title><![CDATA[Lukasz Kaniowski]]></title>
+  <link href="http://lukaszkaniowski.pl//atom.xml" rel="self"/>
+  <link href="http://lukaszkaniowski.pl//"/>
+  <updated>2012-07-27T17:59:49+02:00</updated>
+  <id>http://lukaszkaniowski.pl//</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Łukasz Kaniowski]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
