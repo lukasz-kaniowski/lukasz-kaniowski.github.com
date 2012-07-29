@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Lukasz Kaniowski]]></title>
-  <link href="http://lukaszkaniowski.pl//atom.xml" rel="self"/>
+  <title><![CDATA[Category: intellij | Lukasz Kaniowski]]></title>
+  <link href="http://lukaszkaniowski.pl//blog/categories/intellij/atom.xml" rel="self"/>
   <link href="http://lukaszkaniowski.pl//"/>
   <updated>2012-07-29T14:47:50+02:00</updated>
   <id>http://lukaszkaniowski.pl//</id>
@@ -23,7 +23,7 @@
 <p><a href="http://ethanschoonover.com/solarized">Solarized</a> is a popular color scheme. It can be applied for a numbers of applications (intellij amongst them).</p>
 
 <p>And this is how intellij looks like after applying this great colors.
-<img src="http://lukaszkaniowski.pl//images/solarized-pom.png"></p>
+<img src="/images/solarized-pom.png"></p>
 
 <p>Here are installation <a href="https://github.com/jkaving/intellij-colors-solarized">instructions</a>.</p>
 
