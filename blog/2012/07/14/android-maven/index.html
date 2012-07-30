@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Lukasz Kaniowski</title>
+  <title>Maven and Android - Lukasz Kaniowski</title>
   <meta name="author" content="Łukasz Kaniowski">
 
   
-  <meta name="description" content="Blog Archive 2012 Maven and Android
-Jul 14 2012 posted in android Intellij solarized
-Jun 20 2012 posted in intellij Recent Posts Maven and Android &hellip;">
+  <meta name="description" content="I recently started looking into android development. After some time spend consuming information from the web it seems like
+a lot of android &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +19,7 @@ Jun 20 2012 posted in intellij Recent Posts Maven and Android &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://lukaszkaniowski.pl//blog/archives/">
+  <link rel="canonical" href="http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -77,50 +76,140 @@ Jun 20 2012 posted in intellij Recent Posts Maven and Android &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Maven and Android</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-14T18:13:00+02:00" pubdate data-updated="true">Jul 14<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>I recently started looking into android development. After some time spend consuming information from the web it seems like
+a lot of android development is done only on eclipse, without help from maven build tool.</p>
 
-  
-  <h2>2012</h2>
+<p>If you are like me, comming from java enterprise world, you probably want to use maven for setuping and building your projects.
+Below i described a few tools that come in handy for the job.</p>
 
-<article>
-  
-<h1><a href="/blog/2012/07/14/android-maven/">Maven and Android</a></h1>
-<time datetime="2012-07-14T18:13:00+02:00" pubdate><span class='month'>Jul</span> <span class='day'>14</span> <span class='year'>2012</span></time>
+<h3>Android Archetypes</h3>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/android/'>android</a></span>
-</footer>
+<p>Archetypes for android will help bootstrap your android project. Setup instructions are <a href="https://github.com/akquinet/android-archetypes">here</a></p>
 
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/06/20/intellij-solarized/">Intellij solarized</a></h1>
-<time datetime="2012-06-20T18:13:00+02:00" pubdate><span class='month'>Jun</span> <span class='day'>20</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/intellij/'>intellij</a></span>
-</footer>
+<figure class='code'><figcaption><span>generate maven structure</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>mvn archetype:generate -Dfilter<span class="o">=</span>android
+</span><span class='line'><span class="c"># choose =&gt; de.akquinet.android.archetypes:android-quickstart</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<h3>Git setup</h3>
 
+<p>It&#8217;s good to ignore android specyfic directories.</p>
+
+<figure class='code'><figcaption><span>git with .gitignore</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> &lt;project&gt;
+</span><span class='line'>git init
+</span><span class='line'>
+</span><span class='line'><span class="c"># ignore files specyfic to android</span>
+</span><span class='line'>curl https://raw.github.com/github/gitignore/master/Android.gitignore &gt;&gt; .gitignore
+</span><span class='line'>curl https://raw.github.com/github/gitignore/master/Maven.gitignore &gt;&gt; .gitignore
+</span><span class='line'>
+</span><span class='line'><span class="c"># First commit</span>
+</span><span class='line'>git add .
+</span><span class='line'>git commit -m <span class="s2">&quot;init&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Host your own maven repository on github</h3>
+
+<p>From time to time you will bump onto situation where there is no maven artifact for
+the library you want to use. Solution is simple: host this library on your github account. Check
+<a href="http://blog.marrowboy.co.uk/2011/11/08/how-to-host-a-maven-repo-on-github/">here</a>
+for setup instructions.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Łukasz Kaniowski</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-14T18:13:00+02:00" pubdate data-updated="true">Jul 14<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/android/'>android</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/" data-via="lkanio" data-counturl="http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/06/20/intellij-solarized/" title="Previous Post: Intellij solarized">&laquo; Intellij solarized</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -209,7 +298,10 @@ Jun 20 2012 posted in intellij Recent Posts Maven and Android &hellip;">
       var disqus_shortname = 'lukaszkaniowski';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/';
+        var disqus_url = 'http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

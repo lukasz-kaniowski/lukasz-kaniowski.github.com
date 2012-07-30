@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: android | Lukasz Kaniowski]]></title>
+  <link href="http://lukaszkaniowski.pl//blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://lukaszkaniowski.pl//"/>
+  <updated>2012-07-30T16:53:27+02:00</updated>
+  <id>http://lukaszkaniowski.pl//</id>
+  <author>
+    <name><![CDATA[Łukasz Kaniowski]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Maven and Android]]></title>
+    <link href="http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/"/>
+    <updated>2012-07-14T18:13:00+02:00</updated>
+    <id>http://lukaszkaniowski.pl//blog/2012/07/14/android-maven</id>
+    <content type="html"><![CDATA[<p>I recently started looking into android development. After some time spend consuming information from the web it seems like
+a lot of android development is done only on eclipse, without help from maven build tool.</p>
+
+<p>If you are like me, comming from java enterprise world, you probably want to use maven for setuping and building your projects.
+Below i described a few tools that come in handy for the job.</p>
+
+<h3>Android Archetypes</h3>
+
+<p>Archetypes for android will help bootstrap your android project. Setup instructions are <a href="https://github.com/akquinet/android-archetypes">here</a></p>
+
+<p>``` bash generate maven structure
+mvn archetype:generate -Dfilter=android</p>
+
+<h1>choose => de.akquinet.android.archetypes:android-quickstart</h1>
+
+<p>```</p>
+
+<h3>Git setup</h3>
+
+<p>It's good to ignore android specyfic directories.</p>
+
+<p>``` bash git with .gitignore
+cd <project>
+git init</p>
+
+<h1>ignore files specyfic to android</h1>
+
+<p>curl https://raw.github.com/github/gitignore/master/Android.gitignore >> .gitignore
+curl https://raw.github.com/github/gitignore/master/Maven.gitignore >> .gitignore</p>
+
+<h1>First commit</h1>
+
+<p>git add .
+git commit -m "init"
+```</p>
+
+<h3>Host your own maven repository on github</h3>
+
+<p>From time to time you will bump onto situation where there is no maven artifact for
+the library you want to use. Solution is simple: host this library on your github account. Check
+<a href="http://blog.marrowboy.co.uk/2011/11/08/how-to-host-a-maven-repo-on-github/">here</a>
+for setup instructions.</p>
+]]></content>
+  </entry>
+  
+</feed>

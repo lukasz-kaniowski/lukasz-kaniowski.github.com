@@ -9,7 +9,8 @@
   <meta name="author" content="Łukasz Kaniowski">
 
   
-  <meta name="description" content="Intellij is great. But even better if you add beautiful colors to it. Solarized is a popular color scheme. It can be applied for a numbers of &hellip;">
+  <meta name="description" content="I recently started looking into android development. After some time spend consuming information from the web it seems like
+a lot of android &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +83,91 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/07/14/android-maven/">Maven and Android</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-14T18:13:00+02:00" pubdate data-updated="true">Jul 14<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I recently started looking into android development. After some time spend consuming information from the web it seems like
+a lot of android development is done only on eclipse, without help from maven build tool.</p>
+
+<p>If you are like me, comming from java enterprise world, you probably want to use maven for setuping and building your projects.
+Below i described a few tools that come in handy for the job.</p>
+
+<h3>Android Archetypes</h3>
+
+<p>Archetypes for android will help bootstrap your android project. Setup instructions are <a href="https://github.com/akquinet/android-archetypes">here</a></p>
+
+<figure class='code'><figcaption><span>generate maven structure</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>mvn archetype:generate -Dfilter<span class="o">=</span>android
+</span><span class='line'><span class="c"># choose =&gt; de.akquinet.android.archetypes:android-quickstart</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Git setup</h3>
+
+<p>It&#8217;s good to ignore android specyfic directories.</p>
+
+<figure class='code'><figcaption><span>git with .gitignore</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> &lt;project&gt;
+</span><span class='line'>git init
+</span><span class='line'>
+</span><span class='line'><span class="c"># ignore files specyfic to android</span>
+</span><span class='line'>curl https://raw.github.com/github/gitignore/master/Android.gitignore &gt;&gt; .gitignore
+</span><span class='line'>curl https://raw.github.com/github/gitignore/master/Maven.gitignore &gt;&gt; .gitignore
+</span><span class='line'>
+</span><span class='line'><span class="c"># First commit</span>
+</span><span class='line'>git add .
+</span><span class='line'>git commit -m <span class="s2">&quot;init&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Host your own maven repository on github</h3>
+
+<p>From time to time you will bump onto situation where there is no maven artifact for
+the library you want to use. Solution is simple: host this library on your github account. Check
+<a href="http://blog.marrowboy.co.uk/2011/11/08/how-to-host-a-maven-repo-on-github/">here</a>
+for setup instructions.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/06/20/intellij-solarized/">Intellij Solarized</a></h1>
     
     
@@ -133,6 +219,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/07/14/android-maven/">Maven and Android</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/06/20/intellij-solarized/">Intellij solarized</a>
