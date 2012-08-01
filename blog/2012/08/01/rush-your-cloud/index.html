@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Maven and Android - Lukasz Kaniowski</title>
+  <title>Rush your cloud - Lukasz Kaniowski</title>
   <meta name="author" content="Łukasz Kaniowski">
 
   
-  <meta name="description" content="I recently started looking into android development. After some time spend consuming information from the web it seems like
-a lot of android &hellip;">
+  <meta name="description" content="Blitz on heroku and cloudfront There is a great performance testing tool out there and it calls blitz.io. If you haven&#8217;t already try it, just &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ a lot of android &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/">
+  <link rel="canonical" href="http://lukaszkaniowski.pl//blog/2012/08/01/rush-your-cloud/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -80,7 +79,7 @@ a lot of android &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Maven and Android</h1>
+      <h1 class="entry-title">Rush Your Cloud</h1>
     
     
       <p class="meta">
@@ -96,63 +95,75 @@ a lot of android &hellip;">
   
 
 
-<time datetime="2012-07-14T18:13:00+02:00" pubdate data-updated="true">Jul 14<span>th</span>, 2012</time>
+<time datetime="2012-08-01T10:33:00+02:00" pubdate data-updated="true">Aug 1<span>st</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I recently started looking into android development. After some time spend consuming information from the web it seems like
-a lot of android development is done only on eclipse, without help from maven build tool.</p>
+<div class="entry-content"><h2>Blitz on heroku and cloudfront</h2>
 
-<p>If you are like me, comming from java enterprise world, you probably want to use maven for setuping and building your projects.
-Below i described a few tools that come in handy for the job.</p>
+<p>There is a great performance testing tool out there and it calls <a href="http://blitz.io/">blitz.io</a>. If you haven&#8217;t already try it, just give it a shot.
+It&#8217;s free for basic usage.</p>
 
-<h3>Android Archetypes</h3>
+<p>I decided to check how  basic <a href="http://www.sinatrarb.com/">sinatra app</a> behave on <a href="http://www.heroku.com/">heroku</a> and <a href="http://www.cloudfoundry.com/">cloudfoundry</a>.</p>
 
-<p>Archetypes for android will help bootstrap your android project. Setup instructions are <a href="https://github.com/akquinet/android-archetypes">here</a></p>
+<h3>Sinatra app</h3>
 
-<figure class='code'><figcaption><span>generate maven structure</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>mvn archetype:generate -Dfilter<span class="o">=</span>android
-</span><span class='line'><span class="c"># choose =&gt; de.akquinet.android.archetypes:android-quickstart</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>Creation of sinatra app is very trivial. Just create a file <code>hello.rb</code></p>
 
-
-<h3>Git setup</h3>
-
-<p>It&#8217;s good to ignore android specyfic directories.</p>
-
-<figure class='code'><figcaption><span>git with .gitignore</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>hello.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> &lt;project&gt;
-</span><span class='line'>git init
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;sinatra&#39;</span>
 </span><span class='line'>
-</span><span class='line'><span class="c"># ignore files specyfic to android</span>
-</span><span class='line'>curl https://raw.github.com/github/gitignore/master/Android.gitignore &gt;&gt; .gitignore
-</span><span class='line'>curl https://raw.github.com/github/gitignore/master/Maven.gitignore &gt;&gt; .gitignore
-</span><span class='line'>
-</span><span class='line'><span class="c"># First commit</span>
-</span><span class='line'>git add .
-</span><span class='line'>git commit -m <span class="s2">&quot;init&quot;</span>
+</span><span class='line'><span class="n">get</span> <span class="s1">&#39;/&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="s2">&quot;Hello World!&quot;</span>
+</span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Host your own maven repository on github</h3>
+<p>Blitz needs to verify if you are owner of the app to make a rush. Simple add this to <code>hello.rb</code></p>
 
-<p>From time to time you will bump onto situation where there is no maven artifact for
-the library you want to use. Solution is simple: host this library on your github account. Check
-<a href="http://blog.marrowboy.co.uk/2011/11/08/how-to-host-a-maven-repo-on-github/">here</a>
-for setup instructions.</p>
+<figure class='code'><figcaption><span>hello.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">get</span> <span class="s1">&#39;/mu-40e93541-db42b8f5-36bd0540-dcbf7834&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="s1">&#39;42&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Push to Cloud Foundry and Heroku</h3>
+
+<p>Lets deploy it to cloudfoundry. You need to <a href="http://docs.cloudfoundry.com/tools/vmc/installing-vmc.html/">install vmc</a>.</p>
+
+<ol>
+<li>Target vmc to cloudfoundry.com <code>vmc target api.cloudfoundry.com</code></li>
+<li>Go to directory where you have <code>hello.rb</code> and execute <code>vmc push</code>.</li>
+</ol>
+
+
+<p>To deploy it to heroku please fallow this <a href="https://devcenter.heroku.com/articles/rack">instructions</a></p>
+
+<h3>Rush using Blitz.io</h3>
+
+<p>Now you are ready to make a rush. Bellow are mine results</p>
+
+<h4>Heroku</h4>
+
+<p><img src="/images/rush_blitz/heroku_hit_rate.jpg">
+<img src="/images/rush_blitz/heroku_response.jpg">
+<img src="/images/rush_blitz/heroku_summary.jpg"></p>
+
+<h4>Cloud Foundry</h4>
+
+<p><img src="/images/rush_blitz/cloud_hit.png">
+<img src="/images/rush_blitz/cloud_response.jpg">
+<img src="/images/rush_blitz/cloud_summary.jpg"></p>
 </div>
 
 
@@ -175,12 +186,12 @@ for setup instructions.</p>
   
 
 
-<time datetime="2012-07-14T18:13:00+02:00" pubdate data-updated="true">Jul 14<span>th</span>, 2012</time>
+<time datetime="2012-08-01T10:33:00+02:00" pubdate data-updated="true">Aug 1<span>st</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/android/'>android</a>
+    <a class='category' href='/blog/categories/cloud/'>cloud</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
   
 </span>
 
@@ -189,7 +200,7 @@ for setup instructions.</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/" data-via="lkanio" data-counturl="http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lukaszkaniowski.pl//blog/2012/08/01/rush-your-cloud/" data-via="lkanio" data-counturl="http://lukaszkaniowski.pl//blog/2012/08/01/rush-your-cloud/" >Tweet</a>
   
   
   
@@ -198,10 +209,8 @@ for setup instructions.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/06/20/intellij-solarized/" title="Previous Post: Intellij solarized">&laquo; Intellij solarized</a>
+        <a class="basic-alignment left" href="/blog/2012/07/14/android-maven/" title="Previous Post: Maven and Android">&laquo; Maven and Android</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/08/01/rush-your-cloud/" title="Next Post: Rush your cloud">Rush your cloud &raquo;</a>
       
     </p>
   </footer>
@@ -305,8 +314,8 @@ for setup instructions.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/';
-        var disqus_url = 'http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/';
+        var disqus_identifier = 'http://lukaszkaniowski.pl//blog/2012/08/01/rush-your-cloud/';
+        var disqus_url = 'http://lukaszkaniowski.pl//blog/2012/08/01/rush-your-cloud/';
         var disqus_script = 'embed.js';
       
     (function () {

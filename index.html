@@ -9,8 +9,7 @@
   <meta name="author" content="Łukasz Kaniowski">
 
   
-  <meta name="description" content="I recently started looking into android development. After some time spend consuming information from the web it seems like
-a lot of android &hellip;">
+  <meta name="description" content="Blitz on heroku and cloudfront There is a great performance testing tool out there and it calls blitz.io. If you haven&#8217;t already try it, just &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +76,103 @@ a lot of android &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/01/rush-your-cloud/">Rush Your Cloud</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-01T10:33:00+02:00" pubdate data-updated="true">Aug 1<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Blitz on heroku and cloudfront</h2>
+
+<p>There is a great performance testing tool out there and it calls <a href="http://blitz.io/">blitz.io</a>. If you haven&#8217;t already try it, just give it a shot.
+It&#8217;s free for basic usage.</p>
+
+<p>I decided to check how  basic <a href="http://www.sinatrarb.com/">sinatra app</a> behave on <a href="http://www.heroku.com/">heroku</a> and <a href="http://www.cloudfoundry.com/">cloudfoundry</a>.</p>
+
+<h3>Sinatra app</h3>
+
+<p>Creation of sinatra app is very trivial. Just create a file <code>hello.rb</code></p>
+
+<figure class='code'><figcaption><span>hello.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;sinatra&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">get</span> <span class="s1">&#39;/&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="s2">&quot;Hello World!&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Blitz needs to verify if you are owner of the app to make a rush. Simple add this to <code>hello.rb</code></p>
+
+<figure class='code'><figcaption><span>hello.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">get</span> <span class="s1">&#39;/mu-40e93541-db42b8f5-36bd0540-dcbf7834&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="s1">&#39;42&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Push to Cloud Foundry and Heroku</h3>
+
+<p>Lets deploy it to cloudfoundry. You need to <a href="http://docs.cloudfoundry.com/tools/vmc/installing-vmc.html/">install vmc</a>.</p>
+
+<ol>
+<li>Target vmc to cloudfoundry.com <code>vmc target api.cloudfoundry.com</code></li>
+<li>Go to directory where you have <code>hello.rb</code> and execute <code>vmc push</code>.</li>
+</ol>
+
+
+<p>To deploy it to heroku please fallow this <a href="https://devcenter.heroku.com/articles/rack">instructions</a></p>
+
+<h3>Rush using Blitz.io</h3>
+
+<p>Now you are ready to make a rush. Bellow are mine results</p>
+
+<h4>Heroku</h4>
+
+<p><img src="/images/rush_blitz/heroku_hit_rate.jpg">
+<img src="/images/rush_blitz/heroku_response.jpg">
+<img src="/images/rush_blitz/heroku_summary.jpg"></p>
+
+<h4>Cloud Foundry</h4>
+
+<p><img src="/images/rush_blitz/cloud_hit.png">
+<img src="/images/rush_blitz/cloud_response.jpg">
+<img src="/images/rush_blitz/cloud_summary.jpg"></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -219,6 +315,10 @@ for setup instructions.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/08/01/rush-your-cloud/">Rush your cloud</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/07/14/android-maven/">Maven and Android</a>
