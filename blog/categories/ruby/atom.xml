@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | Lukasz Kaniowski]]></title>
   <link href="http://lukaszkaniowski.pl//blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://lukaszkaniowski.pl//"/>
-  <updated>2012-08-01T14:16:55+02:00</updated>
+  <updated>2012-08-02T01:55:23+02:00</updated>
   <id>http://lukaszkaniowski.pl//</id>
   <author>
     <name><![CDATA[Łukasz Kaniowski]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Creating Cli Gem Quickly]]></title>
+    <link href="http://lukaszkaniowski.pl//blog/2012/08/02/creating-cli-gem-quickly/"/>
+    <updated>2012-08-02T01:18:00+02:00</updated>
+    <id>http://lukaszkaniowski.pl//blog/2012/08/02/creating-cli-gem-quickly</id>
+    <content type="html"><![CDATA[<p>So you have some small, repetitive task to do. You create a script (bash, rake, thor) and you store it locally. After some time you forget where
+it is and how to use it.</p>
+
+<p>You could create a gem  and then add thor to it (described in this <a href="http://chrisparai.so/creating-a-gem-from-a-thor-applicaton/" title="Creating a Gem From a Thor Applicaton">article</a>). It's good but we can do better.</p>
+
+<p>Here is a quick tutorial how.</p>
+
+<h2>Install ore and thor template</h2>
+
+<p><a href="https://github.com/ruby-ore/ore">Ore</a> is a ruby project generator.</p>
+
+<p><code>$ gem install ore</code></p>
+
+<p>Ore generetes project based on templates. It has some templates built in, but you can also create your own.
+There wasn't any template for thor so I created <a href="https://github.com/lukasz-kaniowski/ore-thor">one</a>. Install it:</p>
+
+<p><code>$ ore install https://github.com/lukasz-kaniowski/ore-thor</code></p>
+
+<h2>Generate thor project</h2>
+
+<p>Now you are ready to create your thor gem.</p>
+
+<ol>
+<li>Create project 'helloworld' <code>$ mine helloworld --ore-thor --bundler</code></li>
+<li>Bundle project <code>$ cd helloworld; bundle</code></li>
+<li>Fill all todo's from <code>helloworld.gemspec</code></li>
+<li>Commit to git <code>$ git commit -am 'init'</code></li>
+<li>Install to your local gems <code>$ rake install</code></li>
+<li>Test it <code>$ helloworld</code> and <code>$ helloworld sample</code></li>
+</ol>
+
+
+<p>Thats all, now you can create cli gems in seconds.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Rush your cloud]]></title>

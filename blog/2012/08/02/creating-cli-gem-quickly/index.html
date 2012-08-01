@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: intellij - Lukasz Kaniowski</title>
+  <title>Creating Cli Gem Quickly - Lukasz Kaniowski</title>
   <meta name="author" content="Łukasz Kaniowski">
 
   
-  <meta name="description" content="Category: intellij">
+  <meta name="description" content="So you have some small, repetitive task to do. You create a script (bash, rake, thor) and you store it locally. After some time you forget where
+it &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://lukaszkaniowski.pl/blog/categories/intellij/">
+  <link rel="canonical" href="http://lukaszkaniowski.pl//blog/2012/08/02/creating-cli-gem-quickly/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -75,36 +76,123 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Intellij</h1>
+    
+      <h1 class="entry-title">Creating Cli Gem Quickly</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-02T01:18:00+02:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>So you have some small, repetitive task to do. You create a script (bash, rake, thor) and you store it locally. After some time you forget where
+it is and how to use it.</p>
 
-  
-  <h2>2012</h2>
+<p>You could create a gem  and then add thor to it (described in this <a href="http://chrisparai.so/creating-a-gem-from-a-thor-applicaton/" title="Creating a Gem From a Thor Applicaton">article</a>). It&#8217;s good but we can do better.</p>
 
-<article>
-  
-<h1><a href="/blog/2012/06/20/intellij-solarized/">Intellij solarized</a></h1>
-<time datetime="2012-06-20T18:13:00+02:00" pubdate><span class='month'>Jun</span> <span class='day'>20</span> <span class='year'>2012</span></time>
+<p>Here is a quick tutorial how.</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/intellij/'>intellij</a></span>
-</footer>
+<h2>Install ore and thor template</h2>
+
+<p><a href="https://github.com/ruby-ore/ore">Ore</a> is a ruby project generator.</p>
+
+<p><code>$ gem install ore</code></p>
+
+<p>Ore generetes project based on templates. It has some templates built in, but you can also create your own.
+There wasn&#8217;t any template for thor so I created <a href="https://github.com/lukasz-kaniowski/ore-thor">one</a>. Install it:</p>
+
+<p><code>$ ore install https://github.com/lukasz-kaniowski/ore-thor</code></p>
+
+<h2>Generate thor project</h2>
+
+<p>Now you are ready to create your thor gem.</p>
+
+<ol>
+<li>Create project &#8216;helloworld&#8217; <code>$ mine helloworld --ore-thor --bundler</code></li>
+<li>Bundle project <code>$ cd helloworld; bundle</code></li>
+<li>Fill all todo&#8217;s from <code>helloworld.gemspec</code></li>
+<li>Commit to git <code>$ git commit -am 'init'</code></li>
+<li>Install to your local gems <code>$ rake install</code></li>
+<li>Test it <code>$ helloworld</code> and <code>$ helloworld sample</code></li>
+</ol>
 
 
-</article>
-
+<p>Thats all, now you can create cli gems in seconds.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Łukasz Kaniowski</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-02T01:18:00+02:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ruby/'>ruby</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lukaszkaniowski.pl//blog/2012/08/02/creating-cli-gem-quickly/" data-via="lkanio" data-counturl="http://lukaszkaniowski.pl//blog/2012/08/02/creating-cli-gem-quickly/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/01/rush-your-cloud/" title="Previous Post: Rush your cloud">&laquo; Rush your cloud</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -201,7 +289,10 @@
       var disqus_shortname = 'lukaszkaniowski';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lukaszkaniowski.pl//blog/2012/08/02/creating-cli-gem-quickly/';
+        var disqus_url = 'http://lukaszkaniowski.pl//blog/2012/08/02/creating-cli-gem-quickly/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
