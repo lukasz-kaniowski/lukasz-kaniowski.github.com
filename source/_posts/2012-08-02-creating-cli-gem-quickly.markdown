@@ -28,12 +28,9 @@ There wasn't any template for thor so I created [one][3]. Install it:
 
 Now you are ready to create your thor gem.
 
-1. Create project 'helloworld' `$ mine helloworld --ore-thor --bundler`
-2. Bundle project `$ cd helloworld; bundle`
-3. Fill all todo's from `helloworld.gemspec`
-4. Commit to git `$ git commit -am 'init' `
-5. Install to your local gems `$ rake install`
-6. Test it `$ helloworld` and `$ helloworld sample`
+1. Create project 'helloworld' `$ mine helloworld -s "summary" -D "description" --ore-thor --bundler `
+2. Install to your local gems `$ rake install`
+3. Test it `$ helloworld` and `$ helloworld sample`
 
 Thats all, now you can create cli gems in seconds.
 
