@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: ruby - Lukasz Kaniowski</title>
+  <title>Git Dropbox Sync Tool - Lukasz Kaniowski</title>
   <meta name="author" content="Łukasz Kaniowski">
 
   
-  <meta name="description" content="Category: ruby">
+  <meta name="description" content="I often use dropbox folder as a remote for my local git repositories. Lately I found this great shell script, that makes work with your dropbox very &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://lukaszkaniowski.pl/blog/categories/ruby/">
+  <link rel="canonical" href="http://lukaszkaniowski.pl//blog/2012/08/05/git-dropbox-sync-tool/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -75,64 +75,104 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Ruby</h1>
+    
+      <h1 class="entry-title">Git Dropbox Sync Tool</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-05T15:01:00+02:00" pubdate data-updated="true">Aug 5<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>I often use dropbox folder as a remote for my local git repositories.</p>
 
-  
-  <h2>2012</h2>
+<p>Lately I found this great shell <a href="https://github.com/agnoster/git-dropbox">script</a>, that makes work with your dropbox very easy.</p>
 
-<article>
-  
-<h1><a href="/blog/2012/08/05/git-dropbox-sync-tool/">Git Dropbox Sync Tool</a></h1>
-<time datetime="2012-08-05T15:01:00+02:00" pubdate><span class='month'>Aug</span> <span class='day'>05</span> <span class='year'>2012</span></time>
+<p>It is really great but I wanted more functionality, so on top of that I created gem: <a href="https://rubygems.org/gems/git-dropbox">git-dropbox on rubygems</a></p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/ruby/'>ruby</a></span>
-</footer>
+<h2>Git Dropbox Gem</h2>
 
+<p>This gem lets you syncs your repository by executing command <code>git dropbox sync</code>.</p>
 
-</article>
+<p>If you have multiple git repositorys and you want to be sure that all of them are sync to drobpox you can execute
+<code>git dropbox sync --all</code>. It will sync all of the known repositories.</p>
 
-
-
-<article>
-  
-<h1><a href="/blog/2012/08/02/creating-cli-gem-quickly/">Creating Cli Gem Quickly</a></h1>
-<time datetime="2012-08-02T01:18:00+02:00" pubdate><span class='month'>Aug</span> <span class='day'>02</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/ruby/'>ruby</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/08/01/rush-your-cloud/">Rush your cloud</a></h1>
-<time datetime="2012-08-01T10:33:00+02:00" pubdate><span class='month'>Aug</span> <span class='day'>01</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/cloud/'>cloud</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a></span>
-</footer>
-
-
-</article>
-
+<p>For installation instruction and more details please check git-dropbox <a href="https://github.com/lukasz-kaniowski/git-dropbox">github page</a>.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Łukasz Kaniowski</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-05T15:01:00+02:00" pubdate data-updated="true">Aug 5<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ruby/'>ruby</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lukaszkaniowski.pl//blog/2012/08/05/git-dropbox-sync-tool/" data-via="lkanio" data-counturl="http://lukaszkaniowski.pl//blog/2012/08/05/git-dropbox-sync-tool/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/02/creating-cli-gem-quickly/" title="Previous Post: Creating Cli Gem Quickly">&laquo; Creating Cli Gem Quickly</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -233,7 +273,10 @@
       var disqus_shortname = 'lukaszkaniowski';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lukaszkaniowski.pl//blog/2012/08/05/git-dropbox-sync-tool/';
+        var disqus_url = 'http://lukaszkaniowski.pl//blog/2012/08/05/git-dropbox-sync-tool/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
