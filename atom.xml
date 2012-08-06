@@ -4,7 +4,7 @@
   <title><![CDATA[Lukasz Kaniowski]]></title>
   <link href="http://lukaszkaniowski.pl//atom.xml" rel="self"/>
   <link href="http://lukaszkaniowski.pl//"/>
-  <updated>2012-08-05T15:12:10+02:00</updated>
+  <updated>2012-08-06T20:59:56+02:00</updated>
   <id>http://lukaszkaniowski.pl//</id>
   <author>
     <name><![CDATA[Łukasz Kaniowski]]></name>
@@ -80,7 +80,7 @@ There wasn&#8217;t any template for thor so I created <a href="https://github.co
     <id>http://lukaszkaniowski.pl//blog/2012/08/01/rush-your-cloud</id>
     <content type="html"><![CDATA[<h2>Blitz on heroku and cloudfront</h2>
 
-<p>There is a great performance testing tool out there and it calls <a href="http://blitz.io/">blitz.io</a>. If you haven&#8217;t already try it, just give it a shot.
+<p>There is a great performance testing tool out there and it calls <a href="http://blitz.io/bb8Efr2XeUJewKEdOjRU7OM">blitz.io</a>. If you haven&#8217;t already try it, just give it a shot.
 It&#8217;s free for basic usage.</p>
 
 <p>I decided to check how  basic <a href="http://www.sinatrarb.com/">sinatra app</a> behave on <a href="http://www.heroku.com/">heroku</a> and <a href="http://www.cloudfoundry.com/">cloudfoundry</a>.</p>
