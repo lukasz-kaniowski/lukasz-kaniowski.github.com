@@ -66,7 +66,7 @@ Now you are ready to make a rush. Bellow are mine results
 
 
 
-[1]: http://blitz.io/
+[1]: http://blitz.io/bb8Efr2XeUJewKEdOjRU7OM
 [2]: http://www.heroku.com/
 [3]: http://www.cloudfoundry.com/
 [4]: http://www.sinatrarb.com/
