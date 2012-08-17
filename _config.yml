@@ -53,13 +53,15 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.ht
 # post_asides:
 # page_asides:
 
+sidebar: collapse
+
 # ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #
 
 # Github repositories
 github_user: lukasz-kaniowski
-github_repo_count: 4
+github_repo_count: 2
 github_show_profile_link: true
 github_skip_forks: true
 
