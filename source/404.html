@@ -1,0 +1,14 @@
+---
+layout: page
+title: Page not exists
+footer: false
+---
+<p>It looks like you have requested a page that is no longer there.</p>
+<p>Here is a list of recently published posts.</p>
+<div id="blog-archives" class="missing">
+{% for post in site.posts limit: 10 %}
+<article>
+  {% include archive_post.html %}
+</article>
+{% endfor %}
+</div>
