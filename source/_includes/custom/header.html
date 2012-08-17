@@ -1,6 +1,24 @@
 <hgroup>
-  <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
-  {% if site.subtitle %}
-    <h2>{{ site.subtitle }}</h2>
-  {% endif %}
+    <div style="float: left">
+        <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
+        {% if site.subtitle %}
+        <h2>{{ site.subtitle }}</h2>
+        {% endif %}
+    </div>
+    <nav id="sub-nav" class="alignright">
+        <div class="social">
+            {% if site.twitter_user %}
+            <a class="twitter" href="http://twitter.com/{{ site.twitter_user }}" title="Twitter">Twitter</a>
+            {% endif %}
+            {% if site.github_user %}
+            <a class="github" href="https://github.com/{{ site.github_user }}" title="GitHub">GitHub</a>
+            {% endif %}
+            {% if site.linkedin_user %}
+            <a class="linkedin" href="http://www.linkedin.com/in/{{ site.linkedin_user }}">LinkedIn</a>
+            {% endif %}
+            {% if site.subscribe_rss %}
+            <a class="rss" href="{{ site.subscribe_rss }}" title="RSS">RSS</a>
+            {% endif %}
+        </div>
+    </nav>
 </hgroup>
