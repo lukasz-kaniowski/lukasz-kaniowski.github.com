@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Maven and Android - Lukasz Kaniowski</title>
+  <title>Release your jar to github - Lukasz Kaniowski</title>
   <meta name="author" content="Łukasz Kaniowski">
 
   
-  <meta name="description" content="I recently started looking into android development. After some time spend consuming information from the web it seems like
-a lot of android &hellip;">
+  <meta name="description" content="If you ever need to quickly publish any of your jars to the public, quickest way is to use github. Create maven repo on github You need to create &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ a lot of android &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/">
+  <link rel="canonical" href="http://lukaszkaniowski.pl//blog/2012/08/22/release-your-jar-to-github/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -99,7 +98,7 @@ a lot of android &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Maven and Android</h1>
+      <h1 class="entry-title">Release Your Jar to Github</h1>
     
     
       <p class="meta">
@@ -115,63 +114,80 @@ a lot of android &hellip;">
   
 
 
-<time datetime="2012-07-14T18:13:00+02:00" pubdate data-updated="true">Jul 14<span>th</span>, 2012</time>
+<time datetime="2012-08-22T23:45:00+02:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I recently started looking into android development. After some time spend consuming information from the web it seems like
-a lot of android development is done only on eclipse, without help from maven build tool.</p>
+<div class="entry-content"><p>If you ever need to quickly publish any of your jars to the public, quickest way is to use github.</p>
 
-<p>If you are like me, comming from java enterprise world, you probably want to use maven for setuping and building your projects.
-Below i described a few tools that come in handy for the job.</p>
+<h3>Create maven repo on github</h3>
 
-<h3>Android Archetypes</h3>
+<p>You need to create repository on github, in my case i called it maven-repository.</p>
 
-<p>Archetypes for android will help bootstrap your android project. Setup instructions are <a href="https://github.com/akquinet/android-archetypes">here</a></p>
+<p>You need to clone this repo locally as this is where you will be releasing your jars.</p>
 
-<figure class='code'><figcaption><span>generate maven structure</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>mvn archetype:generate -Dfilter<span class="o">=</span>android
-</span><span class='line'><span class="c"># choose =&gt; de.akquinet.android.archetypes:android-quickstart</span>
-</span></code></pre></td></tr></table></div></figure>
+<h3>Pom configuration and settings.xml</h3>
 
+<p>To your project&#8217;s pom you need to add this lines</p>
 
-<h3>Git setup</h3>
+<pre><code>&lt;scm&gt;
+    &lt;url&gt;https://github.com/lukasz-kaniowski/android_utils&lt;/url&gt;
+    &lt;connection&gt;scm:git:https://github.com/lukasz-kaniowski/android_utils&lt;/connection&gt;
+    &lt;developerConnection&gt;scm:git:https://github.com/lukasz-kaniowski/android_utils&lt;/developerConnection&gt;
+&lt;/scm&gt;
+&lt;distributionManagement&gt;
+    &lt;repository&gt;
+        &lt;id&gt;github-repo&lt;/id&gt;
+        &lt;url&gt;https://github.com/lukasz-kaniowski/maven-repository/raw/master&lt;/url&gt;
+    &lt;/repository&gt;
+&lt;/distributionManagement&gt;
+</code></pre>
 
-<p>It&#8217;s good to ignore android specyfic directories.</p>
+<p>Actually you will not be publishing your jars directly to github but to your local clone of github repository. To do so you need to override <code>distributionManagement</code> variable. Best is to do this in <code>~/.m2/settings.xml</code></p>
 
-<figure class='code'><figcaption><span>git with .gitignore</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> &lt;project&gt;
-</span><span class='line'>git init
-</span><span class='line'>
-</span><span class='line'><span class="c"># ignore files specyfic to android</span>
-</span><span class='line'>curl https://raw.github.com/github/gitignore/master/Android.gitignore &gt;&gt; .gitignore
-</span><span class='line'>curl https://raw.github.com/github/gitignore/master/Maven.gitignore &gt;&gt; .gitignore
-</span><span class='line'>
-</span><span class='line'><span class="c"># First commit</span>
-</span><span class='line'>git add .
-</span><span class='line'>git commit -m <span class="s2">&quot;init&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
+<pre><code>&lt;profile&gt;
+    &lt;id&gt;deploy-github&lt;/id&gt;
+    &lt;properties&gt;
+        &lt;altDeploymentRepository&gt;release-repo::default::file:/path/to/local/github/repo&lt;/altDeploymentRepository&gt;
+    &lt;/properties&gt;
+&lt;/profile&gt;
+</code></pre>
 
+<p>Now you are good to go.</p>
 
-<h3>Host your own maven repository on github</h3>
+<h3>Release your jar</h3>
 
-<p>From time to time you will bump onto situation where there is no maven artifact for
-the library you want to use. Solution is simple: host this library on your github account. Check
-<a href="http://blog.marrowboy.co.uk/2011/11/08/how-to-host-a-maven-repo-on-github/">here</a>
-for setup instructions.</p>
+<p>Process of releasing jar is straightforward:</p>
+
+<pre><code>cd /path/to/your/mvn/project
+mvn release:prepare
+mvn release:perform -Pdeploy-github
+</code></pre>
+
+<p>Next you need to push changes from your local clone of github repo</p>
+
+<pre><code>cd /path/to/local/github/repo
+git add .
+git commit -m "new jar release"
+git push origin master
+</code></pre>
+
+<h3>Configure maven project to use your new github repository</h3>
+
+<p>To use your released jars you will need to add this line into your project&#8217;s pom</p>
+
+<pre><code>&lt;repositories&gt;
+    &lt;repository&gt;
+        &lt;id&gt;Repo on Github&lt;/id&gt;
+        &lt;url&gt;https://github.com/lukasz-kaniowski/maven-repository/raw/master&lt;/url&gt;
+    &lt;/repository&gt;
+&lt;/repositories&gt;
+</code></pre>
+
+<p>Nothing else left to say than just that <strong>Github is awesome!!!</strong></p>
 </div>
 
 
@@ -194,12 +210,12 @@ for setup instructions.</p>
   
 
 
-<time datetime="2012-07-14T18:13:00+02:00" pubdate data-updated="true">Jul 14<span>th</span>, 2012</time>
+<time datetime="2012-08-22T23:45:00+02:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/android/'>android</a>
+    <a class='category' href='/blog/categories/java/'>java</a>
   
 </span>
 
@@ -208,7 +224,7 @@ for setup instructions.</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/" data-via="lkanio" data-counturl="http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lukaszkaniowski.pl//blog/2012/08/22/release-your-jar-to-github/" data-via="lkanio" data-counturl="http://lukaszkaniowski.pl//blog/2012/08/22/release-your-jar-to-github/" >Tweet</a>
   
   
   
@@ -217,10 +233,8 @@ for setup instructions.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/06/20/intellij-solarized/" title="Previous Post: Intellij solarized">&laquo; Intellij solarized</a>
+        <a class="basic-alignment left" href="/blog/2012/08/05/git-dropbox-sync-tool/" title="Previous Post: Git Dropbox Sync Tool">&laquo; Git Dropbox Sync Tool</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/08/01/rush-your-cloud/" title="Next Post: Rush your cloud">Rush your cloud &raquo;</a>
       
     </p>
   </footer>
@@ -340,8 +354,8 @@ for setup instructions.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/';
-        var disqus_url = 'http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/';
+        var disqus_identifier = 'http://lukaszkaniowski.pl//blog/2012/08/22/release-your-jar-to-github/';
+        var disqus_url = 'http://lukaszkaniowski.pl//blog/2012/08/22/release-your-jar-to-github/';
         var disqus_script = 'embed.js';
       
     (function () {
