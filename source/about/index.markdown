@@ -16,7 +16,7 @@ About 2 years ago I switched to a startup environment. And what a switch it was.
 Not so long after, in addition to my day to day contractor work, I decided to start my own thing. Together with my friends we entered 
 mobile apps world and launched [BeProNow.com][1]. 
 
-If you want to know more about my career, please see my [LinkedIn Profile][2]. 
+If you want to know more about my career, please see my [LinkedIn Profile][2] or my [Resume][3]. 
 
 
 Now, most of my development time I split between ruby and java world. I enjoy working on scallable infrustructure using chef, creating java application with spring, improving communication in team using cucumber tests, and lots of other. 
@@ -28,4 +28,5 @@ Have a question? Feel free to contact me.
 
 [1]: http://www.bepronow.com/
 [2]: http://www.linkedin.com/in/lukaszkaniowski
+[3]: http://www.doyoubuzz.com/lukasz-kaniowski/
 
