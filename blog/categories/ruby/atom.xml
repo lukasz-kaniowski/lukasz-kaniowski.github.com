@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | Lukasz Kaniowski]]></title>
   <link href="http://lukaszkaniowski.pl//blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://lukaszkaniowski.pl//"/>
-  <updated>2012-09-10T17:16:48+02:00</updated>
+  <updated>2013-01-06T20:30:43+00:00</updated>
   <id>http://lukaszkaniowski.pl//</id>
   <author>
     <name><![CDATA[Łukasz Kaniowski]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Git Dropbox Sync Tool]]></title>
     <link href="http://lukaszkaniowski.pl//blog/2012/08/05/git-dropbox-sync-tool/"/>
-    <updated>2012-08-05T15:01:00+02:00</updated>
+    <updated>2012-08-05T15:01:00+01:00</updated>
     <id>http://lukaszkaniowski.pl//blog/2012/08/05/git-dropbox-sync-tool</id>
     <content type="html"><![CDATA[<p>I often use dropbox folder as a remote for my local git repositories.</p>
 
@@ -38,7 +38,7 @@
   <entry>
     <title type="html"><![CDATA[Creating Cli Gem Quickly]]></title>
     <link href="http://lukaszkaniowski.pl//blog/2012/08/02/creating-cli-gem-quickly/"/>
-    <updated>2012-08-02T01:18:00+02:00</updated>
+    <updated>2012-08-02T01:18:00+01:00</updated>
     <id>http://lukaszkaniowski.pl//blog/2012/08/02/creating-cli-gem-quickly</id>
     <content type="html"><![CDATA[<p>So you have some small, repetitive task to do. You create a script (bash, rake, thor) and you store it locally. After some time you forget where
 it is and how to use it.</p>
@@ -76,7 +76,7 @@ There wasn't any template for thor so I created <a href="https://github.com/luka
   <entry>
     <title type="html"><![CDATA[Rush your cloud]]></title>
     <link href="http://lukaszkaniowski.pl//blog/2012/08/01/rush-your-cloud/"/>
-    <updated>2012-08-01T10:33:00+02:00</updated>
+    <updated>2012-08-01T10:33:00+01:00</updated>
     <id>http://lukaszkaniowski.pl//blog/2012/08/01/rush-your-cloud</id>
     <content type="html"><![CDATA[<h2>Blitz on heroku and cloudfront</h2>
 

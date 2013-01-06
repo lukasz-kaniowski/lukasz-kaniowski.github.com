@@ -4,7 +4,7 @@
   <title><![CDATA[Category: cloud | Lukasz Kaniowski]]></title>
   <link href="http://lukaszkaniowski.pl//blog/categories/cloud/atom.xml" rel="self"/>
   <link href="http://lukaszkaniowski.pl//"/>
-  <updated>2012-09-10T17:16:48+02:00</updated>
+  <updated>2013-01-06T20:30:43+00:00</updated>
   <id>http://lukaszkaniowski.pl//</id>
   <author>
     <name><![CDATA[Łukasz Kaniowski]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Rush your cloud]]></title>
     <link href="http://lukaszkaniowski.pl//blog/2012/08/01/rush-your-cloud/"/>
-    <updated>2012-08-01T10:33:00+02:00</updated>
+    <updated>2012-08-01T10:33:00+01:00</updated>
     <id>http://lukaszkaniowski.pl//blog/2012/08/01/rush-your-cloud</id>
     <content type="html"><![CDATA[<h2>Blitz on heroku and cloudfront</h2>
 

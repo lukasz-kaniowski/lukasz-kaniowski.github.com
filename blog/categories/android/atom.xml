@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | Lukasz Kaniowski]]></title>
   <link href="http://lukaszkaniowski.pl//blog/categories/android/atom.xml" rel="self"/>
   <link href="http://lukaszkaniowski.pl//"/>
-  <updated>2012-09-10T17:16:48+02:00</updated>
+  <updated>2013-01-06T20:30:43+00:00</updated>
   <id>http://lukaszkaniowski.pl//</id>
   <author>
     <name><![CDATA[Łukasz Kaniowski]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Android Utils for Admob Mediation with TapForTap]]></title>
     <link href="http://lukaszkaniowski.pl//blog/2012/08/23/android-utils-for-admob-mediation-with-tapfortap/"/>
-    <updated>2012-08-23T15:37:00+02:00</updated>
+    <updated>2012-08-23T15:37:00+01:00</updated>
     <id>http://lukaszkaniowski.pl//blog/2012/08/23/android-utils-for-admob-mediation-with-tapfortap</id>
     <content type="html"><![CDATA[<p>I created simple utils (<a href="https://github.com/lukasz-kaniowski/android_utils">link</a> to github project) that display ads from admob mediation.</p>
 
@@ -29,7 +29,7 @@
   <entry>
     <title type="html"><![CDATA[Maven and Android]]></title>
     <link href="http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/"/>
-    <updated>2012-07-14T18:13:00+02:00</updated>
+    <updated>2012-07-14T18:13:00+01:00</updated>
     <id>http://lukaszkaniowski.pl//blog/2012/07/14/android-maven</id>
     <content type="html"><![CDATA[<p>I recently started looking into android development. After some time spend consuming information from the web it seems like
 a lot of android development is done only on eclipse, without help from maven build tool.</p>

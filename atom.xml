@@ -4,7 +4,7 @@
   <title><![CDATA[Lukasz Kaniowski]]></title>
   <link href="http://lukaszkaniowski.pl//atom.xml" rel="self"/>
   <link href="http://lukaszkaniowski.pl//"/>
-  <updated>2012-09-10T17:16:48+02:00</updated>
+  <updated>2013-01-06T20:30:43+00:00</updated>
   <id>http://lukaszkaniowski.pl//</id>
   <author>
     <name><![CDATA[Łukasz Kaniowski]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Android Utils for Admob Mediation with TapForTap]]></title>
     <link href="http://lukaszkaniowski.pl//blog/2012/08/23/android-utils-for-admob-mediation-with-tapfortap/"/>
-    <updated>2012-08-23T15:37:00+02:00</updated>
+    <updated>2012-08-23T15:37:00+01:00</updated>
     <id>http://lukaszkaniowski.pl//blog/2012/08/23/android-utils-for-admob-mediation-with-tapfortap</id>
     <content type="html"><![CDATA[<p>I created simple utils (<a href="https://github.com/lukasz-kaniowski/android_utils">link</a> to github project) that display ads from admob mediation.</p>
 
@@ -29,7 +29,7 @@
   <entry>
     <title type="html"><![CDATA[Best markdown editor for mac: Mou]]></title>
     <link href="http://lukaszkaniowski.pl//blog/2012/08/23/best-markdown-editor-for-mac-mou/"/>
-    <updated>2012-08-23T13:39:00+02:00</updated>
+    <updated>2012-08-23T13:39:00+01:00</updated>
     <id>http://lukaszkaniowski.pl//blog/2012/08/23/best-markdown-editor-for-mac-mou</id>
     <content type="html"><![CDATA[<p>Lately for editing markdown files I started using <a href="http://mouapp.com/">Mou</a>.</p>
 
@@ -47,7 +47,7 @@ It have two pane view, so you can see how your markdown will looks like i.e. on 
   <entry>
     <title type="html"><![CDATA[Release your jar to github]]></title>
     <link href="http://lukaszkaniowski.pl//blog/2012/08/22/release-your-jar-to-github/"/>
-    <updated>2012-08-22T23:45:00+02:00</updated>
+    <updated>2012-08-22T23:45:00+01:00</updated>
     <id>http://lukaszkaniowski.pl//blog/2012/08/22/release-your-jar-to-github</id>
     <content type="html"><![CDATA[<p>If you ever need to quickly publish any of your jars to the public, quickest way is to use github.</p>
 
@@ -122,7 +122,7 @@ git push origin master
   <entry>
     <title type="html"><![CDATA[Git Dropbox Sync Tool]]></title>
     <link href="http://lukaszkaniowski.pl//blog/2012/08/05/git-dropbox-sync-tool/"/>
-    <updated>2012-08-05T15:01:00+02:00</updated>
+    <updated>2012-08-05T15:01:00+01:00</updated>
     <id>http://lukaszkaniowski.pl//blog/2012/08/05/git-dropbox-sync-tool</id>
     <content type="html"><![CDATA[<p>I often use dropbox folder as a remote for my local git repositories.</p>
 
@@ -144,7 +144,7 @@ git push origin master
   <entry>
     <title type="html"><![CDATA[Creating Cli Gem Quickly]]></title>
     <link href="http://lukaszkaniowski.pl//blog/2012/08/02/creating-cli-gem-quickly/"/>
-    <updated>2012-08-02T01:18:00+02:00</updated>
+    <updated>2012-08-02T01:18:00+01:00</updated>
     <id>http://lukaszkaniowski.pl//blog/2012/08/02/creating-cli-gem-quickly</id>
     <content type="html"><![CDATA[<p>So you have some small, repetitive task to do. You create a script (bash, rake, thor) and you store it locally. After some time you forget where
 it is and how to use it.</p>
@@ -182,7 +182,7 @@ There wasn&#8217;t any template for thor so I created <a href="https://github.co
   <entry>
     <title type="html"><![CDATA[Rush your cloud]]></title>
     <link href="http://lukaszkaniowski.pl//blog/2012/08/01/rush-your-cloud/"/>
-    <updated>2012-08-01T10:33:00+02:00</updated>
+    <updated>2012-08-01T10:33:00+01:00</updated>
     <id>http://lukaszkaniowski.pl//blog/2012/08/01/rush-your-cloud</id>
     <content type="html"><![CDATA[<h2>Blitz on heroku and cloudfront</h2>
 
@@ -252,7 +252,7 @@ It&#8217;s free for basic usage.</p>
   <entry>
     <title type="html"><![CDATA[Maven and Android]]></title>
     <link href="http://lukaszkaniowski.pl//blog/2012/07/14/android-maven/"/>
-    <updated>2012-07-14T18:13:00+02:00</updated>
+    <updated>2012-07-14T18:13:00+01:00</updated>
     <id>http://lukaszkaniowski.pl//blog/2012/07/14/android-maven</id>
     <content type="html"><![CDATA[<p>I recently started looking into android development. After some time spend consuming information from the web it seems like
 a lot of android development is done only on eclipse, without help from maven build tool.</p>
@@ -310,7 +310,7 @@ for setup instructions.</p>
   <entry>
     <title type="html"><![CDATA[Intellij solarized]]></title>
     <link href="http://lukaszkaniowski.pl//blog/2012/06/20/intellij-solarized/"/>
-    <updated>2012-06-20T18:13:00+02:00</updated>
+    <updated>2012-06-20T18:13:00+01:00</updated>
     <id>http://lukaszkaniowski.pl//blog/2012/06/20/intellij-solarized</id>
     <content type="html"><![CDATA[<p><a href="http://www.jetbrains.com/idea/">Intellij</a> is great. But even better if you add beautiful colors to it.</p>
 
