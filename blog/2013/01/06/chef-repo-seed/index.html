@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: ruby - Lukasz Kaniowski</title>
+  <title>Chef solo repo seed - Lukasz Kaniowski</title>
   <meta name="author" content="Łukasz Kaniowski">
 
   
-  <meta name="description" content="Category: ruby">
+  <meta name="description" content="If you need to create new repository for chef-solo simply execute commands below and you are good to go: $ git clone https://github.com/lukasz- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://lukaszkaniowski.pl/blog/categories/ruby/">
+  <link rel="canonical" href="http://lukaszkaniowski.pl//blog/2013/01/06/chef-repo-seed/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -94,64 +94,104 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Ruby</h1>
+    
+      <h1 class="entry-title">Chef Solo Repo Seed</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-06T18:13:00+00:00" pubdate data-updated="true">Jan 6<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>If you need to create new repository for chef-solo simply execute commands below and you are good to go:</p>
 
-  
-  <h2>2012</h2>
+<pre><code>    $ git clone https://github.com/lukasz-kaniowski/chef-solo-seed.git your-repo
+    $ cd your-repo
+    $ bundle
+    $ librarian-chef install
+</code></pre>
 
-<article>
-  
-<h1><a href="/blog/2012/08/05/git-dropbox-sync-tool/">Git Dropbox Sync Tool</a></h1>
-<time datetime="2012-08-05T15:01:00+01:00" pubdate><span class='month'>Aug</span> <span class='day'>05</span> <span class='year'>2012</span></time>
+<p>Now you should be able to create new roles and apply them using command below:</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/ruby/'>ruby</a></span>
-</footer>
+<pre><code>    $ chef-solo -c solo.rb -r "role[sample]"
+</code></pre>
 
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/08/02/creating-cli-gem-quickly/">Creating Cli Gem Quickly</a></h1>
-<time datetime="2012-08-02T01:18:00+01:00" pubdate><span class='month'>Aug</span> <span class='day'>02</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/ruby/'>ruby</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/08/01/rush-your-cloud/">Rush your cloud</a></h1>
-<time datetime="2012-08-01T10:33:00+01:00" pubdate><span class='month'>Aug</span> <span class='day'>01</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/cloud/'>cloud</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a></span>
-</footer>
-
-
-</article>
-
+<p>Chef rocks!</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Łukasz Kaniowski</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-06T18:13:00+00:00" pubdate data-updated="true">Jan 6<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/chef/'>chef</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lukaszkaniowski.pl//blog/2013/01/06/chef-repo-seed/" data-via="lkanio" data-counturl="http://lukaszkaniowski.pl//blog/2013/01/06/chef-repo-seed/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/23/android-utils-for-admob-mediation-with-tapfortap/" title="Previous Post: Android Utils for Admob Mediation with TapForTap">&laquo; Android Utils for Admob Mediation with TapForTap</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -260,7 +300,10 @@
       var disqus_shortname = 'lukaszkaniowski';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lukaszkaniowski.pl//blog/2013/01/06/chef-repo-seed/';
+        var disqus_url = 'http://lukaszkaniowski.pl//blog/2013/01/06/chef-repo-seed/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

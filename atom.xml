@@ -4,7 +4,7 @@
   <title><![CDATA[Lukasz Kaniowski]]></title>
   <link href="http://lukaszkaniowski.pl//atom.xml" rel="self"/>
   <link href="http://lukaszkaniowski.pl//"/>
-  <updated>2013-01-06T20:30:43+00:00</updated>
+  <updated>2013-01-06T20:56:02+00:00</updated>
   <id>http://lukaszkaniowski.pl//</id>
   <author>
     <name><![CDATA[Łukasz Kaniowski]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Chef solo repo seed]]></title>
+    <link href="http://lukaszkaniowski.pl//blog/2013/01/06/chef-repo-seed/"/>
+    <updated>2013-01-06T18:13:00+00:00</updated>
+    <id>http://lukaszkaniowski.pl//blog/2013/01/06/chef-repo-seed</id>
+    <content type="html"><![CDATA[<p>If you need to create new repository for chef-solo simply execute commands below and you are good to go:</p>
+
+<pre><code>    $ git clone https://github.com/lukasz-kaniowski/chef-solo-seed.git your-repo
+    $ cd your-repo
+    $ bundle
+    $ librarian-chef install
+</code></pre>
+
+<p>Now you should be able to create new roles and apply them using command below:</p>
+
+<pre><code>    $ chef-solo -c solo.rb -r "role[sample]"
+</code></pre>
+
+<p>Chef rocks!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Android Utils for Admob Mediation with TapForTap]]></title>
