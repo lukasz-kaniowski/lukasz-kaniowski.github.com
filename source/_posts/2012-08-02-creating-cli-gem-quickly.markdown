@@ -22,13 +22,13 @@ Here is a quick tutorial how.
 Ore generetes project based on templates. It has some templates built in, but you can also create your own.
 There wasn't any template for thor so I created [one][3]. Install it:
 
-`$ ore install https://github.com/lukasz-kaniowski/ore-thor`
+`$ ore install https://github.com/lukasz-kaniowski/cli`
 
 ## Generate thor project
 
 Now you are ready to create your thor gem.
 
-1. Create project 'helloworld' `$ mine helloworld -s "summary" -D "description" --ore-thor --bundler `
+1. Create project 'helloworld' `$ mine helloworld -s "summary" -D "description" --cli --bundler `
 2. Install to your local gems `$ rake install`
 3. Test it `$ helloworld` and `$ helloworld sample`
 
@@ -37,6 +37,6 @@ Thats all, now you can create cli gems in seconds.
 
 [1]: http://chrisparai.so/creating-a-gem-from-a-thor-applicaton/ "Creating a Gem From a Thor Applicaton"
 [2]: https://github.com/ruby-ore/ore
-[3]: https://github.com/lukasz-kaniowski/ore-thor
+[3]: https://github.com/lukasz-kaniowski/cli
 
 
